@@ -1,0 +1,22 @@
+<div>
+    <ul *ngFor="let mes of messages">
+        <li>{{mes.msg}}</li>
+        <div class="buttons">
+            <form>
+                <mat-form-field>
+                  <mat-label>Edit this message</mat-label>
+                  <input  matInput [formControl]="EditMessageControl">
+                </mat-form-field>
+                <button mat-button (click)="EditMessage(mes.id)">Edit</button>
+              </form>
+              <button mat-button (click)="DeleteMessage(mes.id)">delete</button>
+        </div>
+    </ul>
+    <form>
+        <mat-form-field>
+          <mat-label>Enter new message</mat-label>
+          <input  matInput [formControl]="MSG">
+        </mat-form-field>
+        <button mat-button (click) = "CreateMessage()">submit</button>
+      </form>
+</div>
